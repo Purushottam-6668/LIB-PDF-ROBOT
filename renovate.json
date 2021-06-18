@@ -3,8 +3,8 @@
   "labels": ["dependencies"],
   "stabilityDays": 3,
   "prCreation": "not-pending",
-  "schedule": ["after 6pm every weekday", "every weekend"],
-  "timezone": "Australia/Sydney",
+  "schedule": ["after 12am every weekday", "every weekend"],
+  "timezone": "India/Kolkata",
   "packageRules": [
     {
       "matchPaths": [".github/workflows/*.yml"],
