@@ -1,3 +1,12 @@
+# Hello  We are Contributing On these repo to Make It  Heroku Deployable 
+
+## New Devs 
+-[ANIMESH VERMA ](https://github.com/AVBotz-TG)
+-[PURUSHOTTAM](github.com/Purushottam-6668)
+
+
+
+
 # Telegram PDF Bot
 
 [![Telegram Bot](https://img.shields.io/badge/Telegram-Bot-blue.svg)](https://t.me/pdfbot)
