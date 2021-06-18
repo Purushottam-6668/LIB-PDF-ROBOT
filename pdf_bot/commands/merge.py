@@ -75,8 +75,8 @@ def merge(update: Update, context: CallbackContext) -> int:
 def ask_first_doc(update: Update, context: CallbackContext) -> int:
     _ = set_lang(update, context)
     text = _(
-        "Send me the PDF files that you'll like to merge\n\n"
-        "Note that the files will be merged in the order that you send me"
+        "**Send me the PDF files that you'll like to merge**\n\n"
+        "**Note that the files will be merged in the order that you send me**"
     )
 
     reply_with_cancel_btn(update, context, text)
@@ -107,9 +107,9 @@ def process_invalid_pdf(
 ) -> int:
     _ = set_lang(update, context)
     if pdf_result == PDF_INVALID_FORMAT:
-        text = _("The file you've sent is not a PDF file")
+        text = _("**The file you've sent is not a PDF file**")
     else:
-        text = _("The PDF file you've sent is too large for me to download")
+        text = _("**The PDF file you've sent is too large for me to download**")
 
     update.effective_message.reply_text(text)
     user_id = update.effective_message.from_user.id
@@ -135,8 +135,7 @@ def ask_next_doc(update: Update, context: CallbackContext) -> int:
     )
     update.effective_message.reply_text(
         _(
-            "Press <b>Done</b> if you've sent me all the PDF files that "
-            "you'll like to merge or keep sending me the PDF files"
+            "**Press {🔀 MERGE NOW} If you've sent me all the PDF files that to merge or keep sending me the PDF files**"
         ),
         reply_markup=reply_markup,
         parse_mode=ParseMode.HTML,
@@ -195,11 +194,11 @@ def preprocess_merge_pdf(update: Update, context: CallbackContext, lock: Lock) -
     num_files = len(context.user_data[MERGE_IDS])
 
     if num_files == 0:
-        update.effective_message.reply_text(_("You haven't sent me any PDF files"))
+        update.effective_message.reply_text(_("**You haven't sent me any PDF files**"))
 
         result = ask_first_doc(update, context)
     elif num_files == 1:
-        update.effective_message.reply_text(_("You've only sent me one PDF file."))
+        update.effective_message.reply_text(_("**You've only sent me one PDF file.**"))
 
         result = ask_next_doc(update, context)
     else:
@@ -213,7 +212,7 @@ def preprocess_merge_pdf(update: Update, context: CallbackContext, lock: Lock) -
 def merge_pdf(update: Update, context: CallbackContext) -> int:
     _ = set_lang(update, context)
     update.effective_message.reply_text(
-        _("Merging your PDF files"), reply_markup=ReplyKeyboardRemove()
+        _("**🔀 Merging your PDF files...**"), reply_markup=ReplyKeyboardRemove()
     )
 
     # Setup temporary files
@@ -234,8 +233,8 @@ def merge_pdf(update: Update, context: CallbackContext) -> int:
         except PdfReadError:
             update.effective_message.reply_text(
                 _(
-                    "I can't merge your PDF files as I couldn't open and read \"{}\". "
-                    "Ensure that it is not encrypted"
+                    "**I can't merge your PDF files as I couldn't open and read \"{}\". "
+                    "**Ensure that it is not encrypted. If Encrypted, Decrypt First**"
                 ).format(file_names[i])
             )
 
