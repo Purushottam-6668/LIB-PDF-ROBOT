@@ -153,17 +153,18 @@ def start_msg(update: Update, context: CallbackContext) -> None:
     _ = set_lang(update, context)
     update.effective_message.reply_text(
         _(
-            "Welcome to PDF Bot!\n\n<b>Key features:</b>\n"
-            "- Compress, merge, preview, rename, split and add watermark to PDF files\n"
-            "- Create PDF files from text messages\n"
-            "- Extract images and text from PDF files\n"
-            "- Convert PDF files into images\n"
-            "- Convert webpages and images into PDF files\n"
-            "- Beautify handwritten notes images into PDF files\n"
-            "- <b><i>And more...</i></b>\n\n"
-            "Type /help to see how to use PDF Bot"
+            "**Hey {}, Welcome to all new PDF Editor Bot!\nI'm the first bot to edit pdfs without downloading it 😉\n\n<b>Key features:**</b>\n"
+            "**- Compress, merge, preview, rename, split and add watermark to PDF files**\n"
+            "**- Create PDF files from text messages**\n"
+            "**- Extract images and text from PDF files**\n"
+            "**- Convert PDF files into images**\n"
+            "**- Convert webpages and images into PDF files**\n"
+            "**- Beautify handwritten notes images into PDF files**\n"
+            "**- And Many More Features, But Explore the bot coz Feeling Lazy to describe more 😅**\n\n"
+            "**Type /help to see how to use PDF Bot**\n\n" 
+            "**🤖 Developer : [Team Librarian™️](https://t.me/Team_Librarian)**"
         ),
-        parse_mode=ParseMode.HTML,
+        parse_mode=Markdown,
     )
 
 
@@ -171,24 +172,25 @@ def help_msg(update, context):
     update.effective_message.reply_chat_action(ChatAction.TYPING)
     _ = set_lang(update, context)
     keyboard = [
-        [InlineKeyboardButton(_("Set Language 🌎"), callback_data=SET_LANG)],
+        [InlineKeyboardButton(_("Change Language 🌎"), callback_data=SET_LANG)],
         [
-            InlineKeyboardButton(_("Join Channel"), f"https://t.me/{CHANNEL_NAME}"),
-            InlineKeyboardButton(_("Support PDF Bot"), callback_data=PAYMENT),
+            InlineKeyboardButton(_("🤖 Updates Channel"), f"https://t.me/{CHANNEL_NAME}"),
+            InlineKeyboardButton(_("😎 Developer "), f"https://t.me/Animesh941/72"),
         ],
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     update.effective_message.reply_text(
         _(
-            "You can perform most of the tasks by sending me one of the followings:\n"
-            "- PDF files\n- Photos\n- Webpage links\n\n"
-            "The rest of the tasks can be performed by using the commands below:\n"
-            "/compare - compare PDF files\n"
-            "/merge - merge PDF files\n"
-            "/photo - convert and combine multiple photos into PDF files\n"
-            "/text - create PDF files from text messages\n"
-            "/watermark - add watermark to PDF files"
+            "**Hey, You can perform most of the tasks by sending me one of the followings:**\n"
+            "**- PDF files\n- Photos\n- Webpage links**\n\n"
+            "**The rest of the tasks can be performed by using the commands below:**\n"
+            "**/compare - compare PDF files**\n"
+            "**/merge - merge PDF files**\n"
+            "**/photo - convert and combine multiple photos into PDF files**\n"
+            "**/text - create PDF files from text messages**\n"
+            "**/watermark - add watermark to PDF files**\n\n"
+            "**Join Channel - @TLBotUpdates ❤️**" 
         ),
         reply_markup=reply_markup,
     )
