@@ -70,8 +70,7 @@ def photo(update: Update, context: CallbackContext) -> int:
 def ask_first_photo(update: Update, context: CallbackContext) -> int:
     _ = set_lang(update, context)
     text = _(
-        "Send me the photos that you'll like to beautify or "
-        "convert into a PDF file\n\nNote that the photos will be beautified and "
+        "**Send me the photos that you'll like to beautify or convert into a PDF file**\n\n**Note that the photos will be beautified and "
         "converted in the order that you send me"
     )
     reply_with_cancel_btn(update, context, text)
