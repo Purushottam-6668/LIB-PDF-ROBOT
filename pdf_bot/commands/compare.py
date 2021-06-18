@@ -52,8 +52,8 @@ def ask_first_doc(update, context):
     )
     update.effective_message.reply_text(
         _(
-            "Send me one of the PDF files that you'll like to compare\n\n"
-            "Note that I can only look for differences in text"
+            "**Send me one of the PDF files that you'll like to compare**\n\n"
+            "**Note that I can only look for differences in text**"
         ),
         reply_markup=reply_markup,
     )
@@ -85,7 +85,7 @@ def check_first_doc(update, context):
         [[_(BACK), _(CANCEL)]], resize_keyboard=True, one_time_keyboard=True
     )
     update.effective_message.reply_text(
-        _("Send me the other PDF file that you'll like to compare"),
+        _("**Send me the other PDF file that you'll like to compare**"),
         reply_markup=reply_markup,
     )
 
@@ -109,7 +109,7 @@ def compare_pdf(update, context):
     _ = set_lang(update, context)
     message = update.effective_message
     message.reply_text(
-        _("Comparing your PDF files"), reply_markup=ReplyKeyboardRemove()
+        _("**😌 Comparing your PDF files...**"), reply_markup=ReplyKeyboardRemove()
     )
 
     with tempfile.NamedTemporaryFile() as tf1, tempfile.NamedTemporaryFile() as tf2:
@@ -128,7 +128,7 @@ def compare_pdf(update, context):
                 send_result_file(update, context, out_fn, "compare")
         except NoDifferenceError:
             message.reply_text(
-                _("There are no differences in text between your PDF files")
+                _("**There are no differences in the text between your PDF files 😏**")
             )
 
     # Clean up memory and files
