@@ -11,7 +11,18 @@
 "repository": "https://github.com/Purushottam-6668/LIB-PDF-ROBOT",
 "env": {
 "APP_URL": {
-    "description": "Your App Url (Like https://t.me/AVBotz) ",
-},    
+},
+"TELE_TOKEN": {
+},
+"DEV_TELE_ID": {
+},
+"GCP_CRED": {
+}, 
+"GCP_KEY": {
+},
+"SLACK_TOKEN": {
+},  
+"STRIPE_TOKEN": {
+},
+},
 }
-    
