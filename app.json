@@ -1,28 +1,71 @@
 {
-"name": "Telegram pdf Editor",
-"description": "These bot Can Edit Pdf Files On Telegram",
-"logo": "https://telegra.ph/file/d6e93dfebf07545fdaff9.jpg",
-"keywords":[
-"Telegram",
-"Pdf",
-"editor",
-],
-"support Chat": "https://t.me/AVBotz",
-"repository": "https://github.com/Purushottam-6668/LIB-PDF-ROBOT",
-"env": {
-"APP_URL": {
-},
-"TELE_TOKEN": {
-},
-"DEV_TELE_ID": {
-},
-"GCP_CRED": {
-}, 
-"GCP_KEY": {
-},
-"SLACK_TOKEN": {
-},  
-"STRIPE_TOKEN": {
-},
-},
+  "name": "TELEGRAM PDF EDITOR",
+  "description": "This Bot Can Edit Pdf Files On Telegram ",
+  "keywords": [
+    "Telegram",
+    "Pdf Editor",
+    "Files"
+  ],
+  "website": "t.me/Team_Librarian",
+  "repository": "https://github.com/Purushottam-6668/LIB-PDF-ROBOT",
+  "logo": "https://small-sharp-tool.com/logo.svg",
+  "success_url": "/welcome",
+  "scripts": {
+    "postdeploy": "bundle exec rake bootstrap"
+  },
+  "env": {
+    "APP_URL": {
+      "description": "your App Url Like t.me/Team_Librarian",
+    },
+    "TELE_TOKEN": {
+      "description": "Telegram Bot Token ",
+    },
+    "DEV_TELE_ID": :{
+      "description": "Telegram User Id",
+    },
+    "GCP_CRED": { 
+      "description": "Google Cloud Platform Credinatials",
+    },
+    "GCP_KEY": {
+      "description": "Google Cloud Platform Key",
+    },
+    "SLACK_TOKEN": {
+      "description": "idk",
+    },
+    "STRIPE_TOKEN":{
+      "description": "idk",
+    },
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "image": "heroku/python",
+  "addons": [
+    "openredis",
+    {
+      "plan": "mongolab:shared-single-small",
+      "as": "MONGO"
+    },
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+    }
+  ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "bundle exec rake test"
+      }
+    }
+  }
 }
