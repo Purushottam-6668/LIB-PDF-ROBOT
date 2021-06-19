@@ -1,19 +1,17 @@
 {
-  "name": "TELEGRAM PDF EDITOR",
-  "description": "This Bot Can Edit Pdf Files On Telegram ",
-  "keywords": [
-    "Telegram",
-    "Pdf Editor",
-    "Files"
-  ],
-  "website": "t.me/Team_Librarian",
-  "repository": "https://github.com/Purushottam-6668/LIB-PDF-ROBOT",
-  "logo": "https://small-sharp-tool.com/logo.svg",
-  "success_url": "/welcome",
-  "scripts": {
-    "postdeploy": "bundle exec rake bootstrap"
-  },
-  "env": {
+    "name": "【◉ LIBRARIAN'S STORE ROOM ◉】",
+    "description": "A Telegram file store bot Devloped By Devs Of Team Librarian ",
+    "logo": "https://telegra.ph/file/1be7f0fdb5fcb98a1956d.jpg",
+    "keywords": [
+        "telegram",
+        "files",
+        "store",
+        "bot"
+    ],
+    "repository": "https://github.com/Purushottam-6668/LIBRARIAN-STORE-ROOM",
+    "website": "https://telegram.dog/Team_Librarian",
+    "success_url": "http://t.me/LibrarianStore_Bot",
+    env": {
     "APP_URL": {
       "description": "your App Url Like t.me/Team_Librarian",
     },
@@ -35,37 +33,15 @@
     "STRIPE_TOKEN":{
       "description": "idk",
     },
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "standard-1x"
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
     }
-  },
-  "image": "heroku/python",
-  "addons": [
-    "openredis",
-    {
-      "plan": "mongolab:shared-single-small",
-      "as": "MONGO"
-    },
-    {
-      "plan": "heroku-postgresql",
-      "options": {
-        "version": "9.5"
-      }
-    }
-  ],
-  "buildpacks": [
-    {
-      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
-    }
-  ],
-  "environments": {
-    "test": {
-      "scripts": {
-        "test": "bundle exec rake test"
-      }
-    }
-  }
 }
