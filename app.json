@@ -20,7 +20,7 @@
     "TELE_TOKEN": {
       "description": "Telegram Bot Token ",
     },
-    "DEV_TELE_ID": :{
+    "DEV_TELE_ID": {
       "description": "Telegram User Id",
     },
     "GCP_CRED": { 
