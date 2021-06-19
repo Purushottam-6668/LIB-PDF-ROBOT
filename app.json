@@ -13,24 +13,5 @@
 "APP_URL": {
     "description": "Your App Url (Like https://t.me/AVBotz) ",
 },    
-”TELE_TOKEN": {
-    "description": "Telegram Bot Token Via @Botfather",
-},    
-"DEV_TELE_ID": {
-    "description": "Your Telegram Id Like 1234 ",
-},    
-"GCP_CRED": {
-    "description": "Google Cloud Credintials ",
-},    
-"GCP_KEY": {
-    "description": "Google Cloud Platform's Key 🙂",
-},
-"SLACK_TOKEN": {
-    "description": "I Don't Know ",
-},
-"STRIPE_TOKEN": {
-    "description": "I don't Know ",
-},
-},
 }
     
