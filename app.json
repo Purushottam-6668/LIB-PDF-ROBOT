@@ -11,27 +11,44 @@
     "repository": "https://github.com/Purushottam-6668/LIBRARIAN-STORE-ROOM",
     "website": "https://telegram.dog/Team_Librarian",
     "success_url": "http://t.me/LibrarianStore_Bot",
-    env": {
-    "APP_URL": {
-      "description": "your App Url Like t.me/Team_Librarian",
-    },
-    "TELE_TOKEN": {
-      "description": "Telegram Bot Token ",
-    },
-    "DEV_TELE_ID": {
-      "description": "Telegram User Id",
-    },
-    "GCP_CRED": { 
-      "description": "Google Cloud Platform Credinatials",
-    },
-    "GCP_KEY": {
-      "description": "Google Cloud Platform Key",
-    },
-    "SLACK_TOKEN": {
-      "description": "idk",
-    },
-    "STRIPE_TOKEN":{
-      "description": "idk",
+        "env": {
+           "ENV": {
+          "description": "Set this to True if you don't want to crash the bot",
+          "value": "True"
+        },
+            
+        "APP_URL": {
+            "description": "your App Url Like t.me/Team_Librarian",
+            "value": ""
+        },
+        "DEV_TELE_ID": {
+            "description": "Owner ID or Developers Id ",
+            "value": ""
+        },
+        "TELE_TOKEN": {
+            "description": "Your Bot Token From @BotFather",
+            "value": ""
+        },
+        "GCP_CRED": {
+            "description": "Google Cloud Platform Credinatials",
+            "value": "",
+            "required": false
+        },
+        "GCP_KEY": {
+            "description": "Google Cloud Platform Key",
+            "value": "",
+            "required": false
+        },
+        "SLACK_TOKEN": {
+            "description": "idk",
+            "value": "",
+            "required": false
+        },
+        "STRIPE_TOKEN":{
+            "description": "idk",
+            "value": "",
+            "required": false
+            }
     },
     "buildpacks": [
         {
