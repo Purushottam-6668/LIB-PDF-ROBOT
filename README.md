@@ -3,6 +3,7 @@
 ## New Devs 
 -[ANIMESH VERMA ](https://github.com/AVBotz-TG)
 -[PURUSHOTTAM](github.com/Purushottam-6668)
+-[AVISHKAR PATIL](https://github.com/avipatilpro)
 
 
 # TEST DEPLOY
